@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+include CLASSIFIERS.txt
+include ez_setup.py
