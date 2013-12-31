@@ -30,7 +30,10 @@ class AppRouter(object):
         return self.get_database(model)
 
     def allow_relation(self, left, right, **hints):
-        return left._meta.app_label == right._meta.app_label
+        left_db = self.get_database(left)
+        right_db = self.get_database(right)
+
+        return left_db is right_db
 
     def allow_migrate(self, db, model):
         return True
